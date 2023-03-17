@@ -7,6 +7,7 @@ importers:
 
   apps/pure-renderer-demo:
     specifiers:
+      '@lheido/solid-pure-renderer': workspace:*
       autoprefixer: ^10.4.13
       postcss: ^8.4.21
       solid-js: ^1.6.10
@@ -15,6 +16,7 @@ importers:
       vite: ^4.1.1
       vite-plugin-solid: ^2.5.0
     dependencies:
+      '@lheido/solid-pure-renderer': link:../../packages/solid-pure-renderer
       solid-js: 1.6.14
     devDependencies:
       autoprefixer: 10.4.14_postcss@8.4.21

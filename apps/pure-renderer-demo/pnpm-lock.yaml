@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@lheido/solid-pure-renderer': workspace:^0.0.0
+
+dependencies:
+  '@lheido/solid-pure-renderer': link:../../packages/solid-pure-renderer
