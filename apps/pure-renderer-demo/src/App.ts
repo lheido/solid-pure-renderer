@@ -3,29 +3,30 @@ import {
   List,
   ListItem,
   Text,
-} from "@lheido/solid-pure-renderer";
-import "./index.css";
+} from '@lheido/solid-pure-renderer';
+import './index.css';
+import { createStore } from 'solid-js/store';
 
 const App = () => {
   // const [bgColorClass, setBgColorClass] = createSignal(false);
   // setTimeout(() => setBgColorClass(true), 1000);
   // const [fz, setFz] = createSignal("2rem");
   // setTimeout(() => setFz("3rem"), 2000);
-  // const [state, setState] = createStore<{ items: string[] }>({ items: [] });
-  // setTimeout(() => setState("items", ["Item 1", "Item 2", "Item 3"]), 1000);
+  const [state, setState] = createStore<{ items: string[] }>({ items: [] });
+  setTimeout(() => setState('items', ['Item 1', 'Item 2', 'Item 3']), 1000);
   return BaseComponent({
-    class: "flex flex-col gap-4",
+    class: 'flex flex-col gap-4',
     children: [
       Text({
-        text: "Hello World!!",
+        text: 'Hello World!!',
         class:
-          "text-slate-200 bg-slate-700 w-full p-8 flex items-center justify-center transition-all",
+          'text-slate-200 bg-slate-700 w-full p-8 flex items-center justify-center transition-all',
       }),
       List({
-        class: "px-4",
-        items: () => ["Item 1", "Item 2", "Item 3"],
+        class: 'px-4',
+        items: () => state.items,
         renderItem: (item) =>
-          ListItem({ class: "relative", children: Text({ text: item }) }),
+          ListItem({ class: 'relative', children: Text({ text: item }) }),
       }),
     ],
   });
